@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Outfit, sans-serif;
   font-size: 18px;
   background: #0d192b;
 }
@@ -26,6 +26,25 @@ body {
 .nft-img {
   max-width: 305px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.nft-img::before {
+  content: "";
+  position: absolute;
+  background: #00fff7;
+  width: 100%;
+  height: 98%;
+  opacity: 0;
+  transition: 0.4s ease;
+  border-radius: 20px;
+}
+
+.nft-img:hover::before {
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
 }
 
 .nft-img img {
@@ -33,10 +52,18 @@ body {
   border-radius: 20px;
 }
 
-.nft-img img:hover {
-  cursor: pointer;
-  background-image: url("./images/icon-view");
-  background-color: #00fff7;
+.icon img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.nft-img:hover .icon img {
+  opacity: 1;
 }
 
 .title {
@@ -82,7 +109,7 @@ body {
 
 .time img {
   width: 20px;
-  height: auto;
+  height: 20px;
   margin-right: 10px;
 }
 
@@ -91,9 +118,12 @@ body {
 }
 
 hr {
-  width: 100%;
-  height: 1px;
+  display: block;
+  border-width: 0;
+  width: 90%;
+  height: 2px;
   color: #2f415b;
+  background-color: #2f415b;
   margin-bottom: 20px;
 }
 
@@ -140,3 +170,5 @@ hr {
 .attribution a:hover {
   color: #00fff7;
 }
+
+/* Add Media Queries */
